@@ -125,4 +125,15 @@ public class Runtime {
         return true;
     }
 
+    public boolean RUNTIME_OS_Push(Frame frame, byte[] value) {
+        Object nop[] = new Object[Heap.getInstance().HEAP_GetObjectPool().length + 1];
+        nop[Heap.getInstance().HEAP_GetObjectPool().length] = object;
+        for (int i = 0; i < Heap.getInstance().HEAP_GetObjectPool().length; i++) {
+            nop[i] = Heap.getInstance().HEAP_GetObjectPool()[i];
+        }
+
+        Heap.getInstance().HEAP_SetObjectPool(nop);
+        frame.
+    }
+
 }
